@@ -8,7 +8,9 @@ export function transformRequest (data: any): any{
   return data
 } 
 
+// 处理响应的数据
 export function transformResponse (data: any): any{
+  // 如果响应数据为字符串
   if (typeof data === 'string'){
     try {
       data = JSON.parse(data)

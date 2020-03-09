@@ -9,7 +9,7 @@ function encode(val: string): string {
     .replace(/%2C/gi, ',')
     .replace(/%20/g, '+')
     .replace(/%5B/gi, '[')
-    .replace(/%5D/gi, ']')
+    .replace(/%5D/gi, ']') 
 }
 
 // 构建URL
@@ -17,18 +17,18 @@ export function buildURL(url: string, params?: any): string {
   // 如果没有参数，直接返回URL
   if (!params) {
     return url
-  }
+  } 
 
-  const parts: string[] = []
+  let parts: string[] = []
 
   // 遍历传入的参数
   Object.keys(params).forEach(key => {
     const val = params[key]
 
     // 如果参数为 null 或者 undefined 则直接不处理
-    if (val == null || typeof val === 'undefined') {
+    if (val === null || typeof val === 'undefined') {
       return
-    }
+    } 
 
     // 如果参数存在数组，则进行拼接 [] 格式
     let values = []
@@ -39,7 +39,7 @@ export function buildURL(url: string, params?: any): string {
       // 反之，直接放进入组里面
       // 为了下面进行处理为 日期或者对象 格式
       values = [val]
-    }
+    } 
 
     values.forEach(val => {
       // 判断是否为日期格式

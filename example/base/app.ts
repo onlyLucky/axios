@@ -1,6 +1,6 @@
  import axios from '../../src/index'
 
-/*axios({
+/* axios({
   method: 'get',
   url: '/base/get',
   params: {

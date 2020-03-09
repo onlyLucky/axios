@@ -1,5 +1,6 @@
 import { isPlainObject } from "./util"
 
+// 处理请求header大小写不一致问题
 function normalizeHeaderName (headers: any, normalizedName: string): void {
   if(!headers) {
     return
@@ -12,6 +13,7 @@ function normalizeHeaderName (headers: any, normalizedName: string): void {
     }
   })
 }
+// 处理请求header
 export function processHeaders (headers: any, data: any): any{
   normalizeHeaderName(headers, 'Content-Type')
 
@@ -23,7 +25,8 @@ export function processHeaders (headers: any, data: any): any{
   return headers
 }
 
-export function parseHaeders(headers: string): any{
+// 处理响应header部分
+export function parseHeaders(headers: string): any{
   let parsed = Object.create(null)
   if(!headers) {
     return parsed
